@@ -17,3 +17,21 @@
     "name": "typicode"
   }
 }
+
+{title: 'Those Who Walk Away', year: '2021', release_date: '2021-06-01', imdb_id: 'tt12292206', imdb_rating: '0', …}
+countries: ['United States of America']
+directors: ['Robert Rippberger']
+genres: (3) ['Horror', 'Thriller', 'Drama']
+imdb_id: "tt12292206"
+imdb_rating: "0"
+language: null
+popularity: "0.602"
+rated: null
+release_date: "2021-06-01"
+runtime: 92
+stars: (7) ['Booboo Stewart', 'Nils Allen Stewart', 'Scarlett Sperduto', 'Grant Morningstar', 'Bryson JonSteele', 'Connor McKinley Griffin', 'Nancy Harding']
+title: "Those Who Walk Away"
+vote_count: "0"
+year: "2021"
+youtube_trailer_key: ""
+[[Prototype]]: Object

@@ -44,7 +44,7 @@ h1 {
     width: 325px;
 }
 
-.button {
+.movie-button {
     text-decoration: none;
     background-color: green;
     padding: 0.5em 1em;
@@ -52,6 +52,16 @@ h1 {
     display: inline-block;
     color: white;
 }
+
+.dinner-button {
+    text-decoration: none;
+    background-color: green;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
+
 
 #dropdown-movie {
     text-decoration: none;

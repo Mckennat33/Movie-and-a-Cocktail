@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){ 
-        const movieAPI = "https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-random-movies&page=1"
+const movieAPI = "https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-random-movies&page=1"
+
+let dinnerBtn = document.querySelector('.dinner-button')
+dinnerBtn.addEventListener('click', renderMovie)
+
 
     fetch(movieAPI, {
         "method": "GET",
@@ -15,12 +19,22 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 })
 
+
+
 function renderMovie(jsonObject){
+    console.log(jsonObject)
     let arrayTitle = jsonObject.movie_results
     arrayTitle.forEach((title) => {
-        console.log(title)
+        // console.log(title)
+        let movieGenre = document.getElementById('movie-description')
+        let newTitleArr = title.title
+        let random = newTitleArr[Math.floor(Math.random() * newTitleArr.length)]
+        // console.log(newTitleArr)
+        // console.log(newTitleArr)
+        movieGenre.innerHTML += random
+        
+
     })
-    // let movieTitle = document.getElementById('movie-description')
-    // movieTitle.innerHTML += jsonObject.movie_results.
 }
 
+This is another change that I made 
