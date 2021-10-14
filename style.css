@@ -17,6 +17,7 @@ h1 {
     border: 1px solid #c9c9c9;
     border-radius: 7px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: left;
     margin: 25px;
 }
 
