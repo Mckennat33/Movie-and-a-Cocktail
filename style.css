@@ -1,4 +1,11 @@
 /* Header section */ 
+
+body {
+    
+    /*background-color: #9fa8a3; */ 
+    background-color: #173e43;
+}
+
 .head-container {
     background-color: #F1F1F1;
     text-align: center;
@@ -12,10 +19,13 @@ h1 {
 /* Movie Card section */ 
 
 #movie-card {
+
     width: 320px;
     padding: 20px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
+    background-color: #fae596;
+    
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: left;
     margin: 25px;
@@ -29,6 +39,7 @@ h1 {
     padding: 20px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
+    background-color: #fae596;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: right; 
     margin: 25px;
@@ -36,14 +47,15 @@ h1 {
 }
 
 #movie-image {
-    border-radius: 7px 7px 0px 0px ;
+    border-radius: 7px 7px 7px 7px ;
     margin-bottom: 1px;
     width: 325px;
     object-fit: cover;
+    border-radius: 7px 7px 7px 7px;
 }
 
 #new-movie-image {
-    border-radius: 7px 7px 0px 0px ;
+    border-radius: 7px 7px 7px 7px ;
     margin-bottom: 1px;
     width: 325px;
 }
@@ -53,6 +65,7 @@ h1 {
     padding: 20px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
+    background-color: #fae596;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: left;
     margin: 25px;
@@ -60,14 +73,14 @@ h1 {
 
 
 #dinner-image {
-    border-radius: 7px 7px 0px 0px ;
+    
     margin-bottom: 1px;
     width: 325px;
 }
 
 .movie-button {
     text-decoration: none;
-    background-color: green;
+    background-color: #3fb0ac;
     padding: 0.5em 1em;
     border-radius: 4px;
     display: inline-block;
@@ -76,7 +89,7 @@ h1 {
 
 .dinner-button {
     text-decoration: none;
-    background-color: green;
+    background-color: #3fb0ac;
     padding: 0.5em 1em;
     border-radius: 4px;
     display: inline-block;
@@ -86,7 +99,7 @@ h1 {
 
 #dropdown-movie {
     text-decoration: none;
-    background-color: green;
+    background-color: #3fb0ac;
     padding: 0.5em 1em;
     border-radius: 4px;
     display: inline-block;
@@ -95,9 +108,36 @@ h1 {
 
 #dropdown-dinner {
     text-decoration: none;
-    background-color: green;
+    background-color: #3fb0ac;
     padding: 0.5em 1em;
     border-radius: 4px;
     display: inline-block;
     color: white;
+}
+
+#delete-button {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
+
+#movie-title {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
+}
+    
+#movie-genre {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
+}
+
+#movie-rating {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
 }
