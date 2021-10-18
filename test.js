@@ -1,31 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', function(){ 
 
-    let dinnerBtn = document.querySelector("#dinner > button").addEventListener('click', (event) => {
-
-        fetch("https://the-cocktail-db.p.rapidapi.com/random.php", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-            "x-rapidapi-key": "de51889a1fmshe095099b1a97993p13134fjsnc818ad7373cb"
-        }
-    })
-    .then(response => response.json())
-
-    .then(function chosenCocktail(cocktail) {
-        // let cocktailArray = cocktail
-        cocktail.map(function(drink) {
-            console.log(drink)
-        })
-    })
-    .catch(err => {
-        console.error(err);
-    });
-    
-})
-
-
-    let movieBtn = document.querySelector('.movie-button').addEventListener('click', (event) => {
 
     fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-random-movies&page=1", {
         "method": "GET",
@@ -36,38 +10,39 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     .then(response => response.json())
     .then(chosenMovieGenre)
+    // .catch(err => {
+    //     console.error(err);
+    // });
     function chosenMovieGenre(jsonObject){
         let arrayGenres = jsonObject.movie_results
         let genreChosen  = document.getElementById('dropdown-movie').value
         let filteredMovies = arrayGenres.map((movie) => {
-            // console.log(movie.genres[0])
             if (movie.genres[0] === genreChosen) {
+                    // console.log(movie.genres[0])
                     let movieTitle = movie.title
                     let movieGenres = movie.genres[0]
                     let movieRating = movie.imdb_rating
                     let movieTitlePar = document.getElementById('movie-title')
                     let movieTitleEx = document.createElement('h3')
-                    return movieTitleEx.innerText = `<p id="movie-title">Title: ${movieTitle}</p> <p    id="movie-genre">Genre: ${movieGenres}</p> <p id="movie-rating"">Rating: ${movieRating}/   10</p>`
+
+                    return movieTitleEx.innerHTML = `<p id="movie-title">Title: ${movieTitle}</p> <p id="movie-genre">Genre: ${movieGenres}</p> <p id="movie-rating"">Rating: ${movieRating}/10</p>`
                 } // debugger;
             })
+
             randomizeMovie(filteredMovies);
             // renderMovie(filteredMovies)
         }
-    // .catch(err => {
-    //     console.error(err);
-    // });
-    })
-}) // End of DOMContentLoaded
+        })
 
 
-
+// }) // End of DOMContentLoaded
 
 
 function randomizeMovie(titles) {
     let filteredTitles = titles.filter(title => title != undefined)
     let randomIndex = Math.floor(Math.random() * filteredTitles.length)
     let randomTitle = filteredTitles[randomIndex]
-
+    // study this //
     let movieTitlePar = document.getElementById('new-movie-card')
     let movieTitle = document.createElement('h3')
     movieTitle.innerHTML += randomTitle
@@ -86,6 +61,3 @@ function randomizeMovie(titles) {
 function deleteMovie(event) {
     event.target.parentNode.remove()
 }
-
-
-
