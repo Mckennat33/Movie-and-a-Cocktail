@@ -32,7 +32,6 @@ h1 {
 }
 
 #new-movie-card {
-    /* top: 500px; */
     right: 413px;
     width: 320px;
     bottom: 10px;
@@ -43,7 +42,6 @@ h1 {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: right; 
     margin: 25px;
-    /* position: relative; */
 }
 
 #movie-image {
@@ -60,7 +58,7 @@ h1 {
     width: 325px;
 }
 
-#dinner-card {
+#cocktail-card {
     width: 320px;
     padding: 20px;
     border: 1px solid #c9c9c9;
@@ -71,11 +69,32 @@ h1 {
     margin: 25px;
 }
 
+#new-cocktail-card {
+    /* top: 500px; */
+    right: 413px;
+    width: 320px;
+    bottom: 10px;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: right; 
+    margin: 25px;
+}
 
-#dinner-image {
+
+#cocktail-image {
     
     margin-bottom: 1px;
     width: 325px;
+}
+
+#new-cocktail-image {
+    border-radius: 7px 7px 7px 7px ;
+    margin-bottom: 1px;
+    width: 325px;
+    height: 250px;
 }
 
 .movie-button {
@@ -106,7 +125,7 @@ h1 {
     color: white;
 }
 
-#dropdown-dinner {
+#dropdown-alc {
     text-decoration: none;
     background-color: #3fb0ac;
     padding: 0.5em 1em;
