@@ -21,7 +21,7 @@ h1 {
 #movie-card {
 
     width: 320px;
-    padding: 20px;
+    padding: 65px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
     background-color: #fae596;
@@ -42,14 +42,16 @@ h1 {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: right; 
     margin: 25px;
+    position: static;
 }
 
 #movie-image {
     border-radius: 7px 7px 7px 7px ;
     margin-bottom: 1px;
-    width: 325px;
-    object-fit: cover;
-    border-radius: 7px 7px 7px 7px;
+    
+    width: 340px;
+    
+    
 }
 
 #new-movie-image {
@@ -60,17 +62,17 @@ h1 {
 
 #cocktail-card {
     width: 320px;
-    padding: 20px;
+    padding: 65px;
     border: 1px solid #c9c9c9;
     border-radius: 7px;
     background-color: #fae596;
+    height: 365px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: left;
     margin: 25px;
 }
 
 #new-cocktail-card {
-    /* top: 500px; */
     right: 413px;
     width: 320px;
     bottom: 10px;
@@ -81,11 +83,13 @@ h1 {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     float: right; 
     margin: 25px;
+    position: static;
+
 }
 
 
 #cocktail-image {
-    
+    border-radius: 7px 7px 7px 7px ;
     margin-bottom: 1px;
     width: 325px;
 }

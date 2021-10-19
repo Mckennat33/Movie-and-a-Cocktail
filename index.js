@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 ////////////////////////////////////////////////////////////////////////////////
 }) // End of DOMContentLoaded
-
+////////////////////////////////////////////////////////////////////////////////
 
 function chosenCocktail(cocktail) {
     console.log(cocktail)
@@ -47,7 +47,7 @@ function chosenCocktail(cocktail) {
             let chosenDrink = drinks.strDrink
             let chosenDrinkImg = drinks.strDrinkThumb
             // console.log(chosenDrinkImg)
-            return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <p>${chosenDrink}</p>`
+            return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <h3>${chosenDrink}</h3> <p id="instructions">Instructions:</p> <p>${drinks.strInstructions}</p>`
         }
     })
     renderCocktail(randomizedDrink)
@@ -56,7 +56,6 @@ function chosenCocktail(cocktail) {
 function renderCocktail(drinks) {
     let randomCocktail = drinks
     
-
     let newDrinkCard = document.createElement('div')
     newDrinkCard.id = "new-cocktail-card"
 
@@ -67,15 +66,25 @@ function renderCocktail(drinks) {
     let drinkInfo = document.getElementById("dinner-info")
     drinkInfo.innerHTML = ''
 
-
+    let deleteBtn = document.createElement('button')
+    deleteBtn.id = 'delete-button'
+    deleteBtn.innerHTML = "Delete"
+    deleteBtn.addEventListener('click', deleteDrink)
 
     drinkInfo.append(drinkTitle)
+
+    drinkTitle.append(deleteBtn)
+
+}
+
+function deleteDrink(event) {
+    event.target.parentNode.remove()
 }
 
 
 
-
-
+// End of cocktail code 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -140,6 +149,6 @@ function deleteMovie(event) {
     event.target.parentNode.remove()
 }
 
-
+// end of Movie code 
 
 

@@ -49,6 +49,9 @@ function chosenCocktail(cocktail) {
             // console.log(chosenDrinkImg)
             return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <p>${chosenDrink}</p>`
         }
+        if () {
+            console.log('hello')
+        }
     })
     renderCocktail(randomizedDrink)
 }
