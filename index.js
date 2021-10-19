@@ -36,22 +36,42 @@ document.addEventListener('DOMContentLoaded', function(){
 ////////////////////////////////////////////////////////////////////////////////
 
 function chosenCocktail(cocktail) {
-    console.log(cocktail)
-
+    
     let cocktailArray = cocktail.drinks
     // console.log(cocktailArray)
-    let alcChosen = document.getElementById('dropdown-alc').value
+    // let alcChosen = document.getElementById('dropdown-alc').value
     let randomizedDrink = cocktailArray.map((drinks) => {
-        if (drinks.strAlcoholic === alcChosen) {
+        if (drinks.strIngredient3 != null) {
+            // console.log(drinks.strIngredient1)
             let drinkCard = document.createElement('h3')
             let chosenDrink = drinks.strDrink
             let chosenDrinkImg = drinks.strDrinkThumb
+            let ing1 = drinks.strIngredient1
+            let ing2 = drinks.strIngredient2
+            let ing3 = drinks.strIngredient3
+            //console.log(ing1)
+
+            // debugger;
             // console.log(chosenDrinkImg)
-            return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <h3>${chosenDrink}</h3> <p id="instructions">Instructions:</p> <p>${drinks.strInstructions}</p>`
+            return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <h3>${chosenDrink}</h3> <h3 id="instructions"> Instructions:</h3> <p>${drinks.strInstructions}</p>  
+            
+            <h3>Ingredients:</h3> <p>${ing1},  ${ing2},  ${ing3}</p>`
+            } else if (drinks.strIngredient3 == null) {
+                let drinkCard = document.createElement('h3')
+                let chosenDrink = drinks.strDrink
+                let chosenDrinkImg = drinks.strDrinkThumb
+                let ing1 = drinks.strIngredient1
+                let ing2 = drinks.strIngredient2
+                let ing3 = drinks.strIngredient3
+            return drinkCard.innerText = `<img src="${chosenDrinkImg}" id="new-cocktail-image"> <h3>${chosenDrink}</h3> <h3 id="instructions"> Instructions:</h3> <p>${drinks.strInstructions}</p>  
+            
+            <h3>Ingredients:</h3> <p>${ing1},  ${ing2}</p>`
         }
     })
     renderCocktail(randomizedDrink)
+    
 }
+
 
 function renderCocktail(drinks) {
     let randomCocktail = drinks
@@ -80,6 +100,9 @@ function renderCocktail(drinks) {
 function deleteDrink(event) {
     event.target.parentNode.remove()
 }
+
+
+
 
 
 

@@ -1,110 +1,169 @@
-document.addEventListener('DOMContentLoaded', function(){ 
+/////  Original CSS 
 
-    let dinnerBtn = document.querySelector("#dinner > button").addEventListener('click', (event) => {
+/* Header section */ 
 
-        fetch("https://the-cocktail-db.p.rapidapi.com/random.php", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-            "x-rapidapi-key": "de51889a1fmshe095099b1a97993p13134fjsnc818ad7373cb"
-        }
-    })
-    .then(response => response.json())
-
-    .then(function chosenCocktail(cocktail) {
-        // let cocktailArray = cocktail
-        cocktail.map(function(drink) {
-            console.log(drink)
-        })
-    })
-    .catch(err => {
-        console.error(err);
-    });
+body {
     
-})
-
-
-    let movieBtn = document.querySelector('.movie-button').addEventListener('click', (event) => {
-
-    fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-random-movies&page=1", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-            "x-rapidapi-key": "de51889a1fmshe095099b1a97993p13134fjsnc818ad7373cb"
-        }
-    })
-    .then(response => response.json())
-    .then(chosenMovieGenre)
-    function chosenMovieGenre(jsonObject){
-        let arrayGenres = jsonObject.movie_results
-        let genreChosen  = document.getElementById('dropdown-movie').value
-        let filteredMovies = arrayGenres.map((movie) => {
-            // console.log(movie.genres[0])
-            if (movie.genres[0] === genreChosen) {
-                    let movieTitle = movie.title
-                    let movieGenres = movie.genres[0]
-                    let movieRating = movie.imdb_rating
-                    let movieTitlePar = document.getElementById('movie-title')
-                    let movieTitleEx = document.createElement('h3')
-                    return movieTitleEx.innerText = `<p id="movie-title">Title: ${movieTitle}</p> <p    id="movie-genre">Genre: ${movieGenres}</p> <p id="movie-rating"">Rating: ${movieRating}/   10</p>`
-                } // debugger;
-            })
-            randomizeMovie(filteredMovies);
-            // renderMovie(filteredMovies)
-        }
-    // .catch(err => {
-    //     console.error(err);
-    // });
-    })
-}) // End of DOMContentLoaded
-
-
-
-
-
-function randomizeMovie(titles) {
-    let filteredTitles = titles.filter(title => title != undefined)
-    let randomIndex = Math.floor(Math.random() * filteredTitles.length)
-    let randomTitle = filteredTitles[randomIndex]
-
-    let movieTitlePar = document.getElementById('new-movie-card')
-    let movieTitle = document.createElement('h3')
-    movieTitle.innerHTML += randomTitle
-
-    let movieImg = document.createElement('img')
-    movieImg.id = 'new-movie-image'
-    movieImg.src = 'movietitleimg.jpg'
-    
-    let deleteBtn = document.createElement('button')
-    deleteBtn.id = 'delete-button'
-    deleteBtn.innerHTML = "Delete"
-    deleteBtn.addEventListener('click', deleteMovie)
-    movieTitlePar.append(movieImg, movieTitle, deleteBtn) //, movieTitle)
+    /*background-color: #9fa8a3; */ 
+    background-color: #173e43;
 }
 
-function deleteMovie(event) {
-    event.target.parentNode.remove()
+.head-container {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    padding: 20px;
+}
+
+/* Movie Card section */ 
+
+#movie-card {
+
+    width: 320px;
+    padding: 65px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: left;
+    margin: 25px;
+}
+
+#new-movie-card {
+    right: 500px;
+    top: 550px;
+    width: 410px;
+    bottom: 10px;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: left; 
+    margin: 25px;
+    position: relative;
+}
+
+#movie-image {
+    border-radius: 7px 7px 7px 7px ;
+    margin-bottom: 1px;
+    width: 325px;
+    
+    
+}
+
+#new-movie-image {
+    border-radius: 7px 7px 7px 7px ;
+    margin-bottom: 1px;
+    width: 410px;
+    
+}
+
+#cocktail-card {
+    width: 320px;
+    padding: 65px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    height: 365px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: right;
+    margin: 25px;
+    position: relative;
+}
+
+#new-cocktail-card {
+    left: 500px;
+    top: 550px;
+    width: 410px;
+    bottom: 10px;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: right; 
+    margin: 25px;
+    position: relative;
+
 }
 
 
+#cocktail-image {
+    border-radius: 7px 7px 7px 7px ;
+    margin-bottom: 1px;
+    width: 325px;
+}
+
+#new-cocktail-image {
+    border-radius: 7px 7px 7px 7px ;
+    margin-bottom: 1px;
+    width: 410px;
+}
+
+.movie-button {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
+
+.dinner-button {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
 
 
+#dropdown-movie {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
 
-// old render Cocktail 
+#dropdown-alc {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
 
+#delete-button {
+    text-decoration: none;
+    background-color: #3fb0ac;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
 
-let exDiv = document.getElementById('dinner-info')
-//newCocktailCard.id = "new-cocktail-card"
+#movie-title {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
+}
+    
+#movie-genre {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
+}
 
-let newCocktailCard = document.createElement('div')
-newCocktailCard.id = 'new-cocktail-card'
-
-let cocktailImg = document.createElement("img")
-cocktailImg.id = "cocktail-image"
-cocktailImg.src = `${drinks.strDrinkThumb}`
-
-let newCard = document.createElement('h3')
-newCard.innerHTML = `${drinks.strDrink}`
-
-// newCocktailCard.append(exDiv, newCard, cocktailImg)
-exDiv.append(newCocktailCard, cocktailImg, newCard)
+#movie-rating {
+    color: black;
+    padding: 5px;
+    border-radius: 7px 7px 7px 7px;
+}
