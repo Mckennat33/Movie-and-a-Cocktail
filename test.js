@@ -114,3 +114,45 @@ function chosenCocktail(cocktail) {
     position: static;
 
 }
+
+
+
+let saveBtn = document.createElement('button') 
+saveBtn.id = 'save-button'
+saveBtn.innerHTML = "Save"
+saveBtn.addEventListener("click", function saveCard(event){
+    let savedCocktailCard = document.getElementById('new-cocktail-Card')
+    savedCocktailCard = randomCocktail
+
+    let newCard = document.getElementById('saved-content')
+    
+    console.log(newCard)
+    
+    newCard.append(savedCocktailCard)
+})
+
+
+
+function renderCocktail(drinks) {
+    let randomCocktail = drinks
+    
+    let newDrinkCard = document.createElement('div')
+    newDrinkCard.id = "new-cocktail-card"
+
+    let drinkTitle = document.createElement('h3')
+    drinkTitle.id = "new-cocktail-card"
+    drinkTitle.innerHTML = randomCocktail
+
+    let drinkInfo = document.getElementById("dinner-info")
+    drinkInfo.innerHTML = ''
+
+    let deleteBtn = document.createElement('button')
+    deleteBtn.id = 'delete-button'
+    deleteBtn.innerHTML = "Delete"
+    deleteBtn.addEventListener('click', deleteDrink)
+
+    drinkInfo.append(drinkTitle)
+
+    drinkTitle.append(deleteBtn)
+
+}

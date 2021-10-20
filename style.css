@@ -26,7 +26,6 @@ h1 {
     border-radius: 7px;
     background-color: #fae596;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-
     margin: 25px;
 } 
 
@@ -165,3 +164,21 @@ h1 {
     padding: 5px;
     border-radius: 7px 7px 7px 7px;
 }
+
+/*
+#new-cocktail-card {
+    left: 500px;
+    top: 550px;
+    width: 410px;
+    bottom: 10px;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    background-color: #fae596;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    float: right; 
+    margin: 25px;
+    position: relative;
+
+}
+/*
